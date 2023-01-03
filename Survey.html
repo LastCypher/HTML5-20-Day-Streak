@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content=
+"width=device-width, initial-scale=1.0">
+<title>
+Survey form
+</title>
+<style>
+/* Styling the Body element */
+body {
+background-color: blue;
+font-family: Verdana;
+text-align: center;
+}
+/* Styling form-control Class */
+.form-control {
+text-align: left;
+margin-bottom: 25px;
+}
+/* Styling form-control Label */
+.form-control label {
+display: block;
+margin-bottom: 10px;
+}
+/* Styling form-control input,
+select, textarea */
+.form-control input,
+.form-control select,
+.form-control textarea {
+border: 1px solid #777;
+border-radius: 2px;
+font-family: inherit;
+padding: 10px;
+display: block;
+width: 95%;
+}
+/* Styling form-control Radio
+button and Checkbox */
+.form-control input[type="radio"],
+.form-control input[type="checkbox"] {
+display: inline-block;
+width: auto;
+}
+/* Styling Button */
+button {
+background-color: rgb(0, 255, 68);
+border: 1px solid #777;
+border-radius: 2px;
+font-family: inherit;
+font-size: 21px;
+display: block;
+width: 100%;
+margin-top: 50px;
+margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+<h1>Survey form</h1>
+<!-- Create Form -->
+<form id="form">
+<!-- Details -->
+<div class="form-control">
+<label for="name" id="label-name">
+Name
+</label>
+<!-- Input Type Text -->
+<input type="text"
+id="name"
+placeholder="Enter your name" />
+</div>
+<div class="form-control">
+<label for="email" id="label-email">
+Email
+</label>
+<!-- Input Type Email-->
+<input type="email"
+id="email"
+placeholder="Enter your email" />
+</div>
+<div class="form-control">
+<label for="Registration No." id="label-age">
+Registration No.
+</label>
+<!-- Input Type Text -->
+<input type="text"
+id="Registration No."
+placeholder="Enter your Reg. No." />
+</div>
+<div class="form-control">
+<label for="role" id="label-role">
+Which option best describes you?
+</label>
+<!-- Dropdown options -->
+<select name="role" id="role">
+<option value="Solo">Solo</option>
+<option value="Rock">Rock</option>
+<option value="Heavy Metal">Heavy Metal</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="form-control">
+<label for="URL-LINK" id="label-age">URL-LINK</label>
+<!-- Input Type Text -->
+<input type="text"
+id="URL-LINK."
+placeholder="URL-LINK" />
+</div>
+<!-- Multi-line Text Input Control -->
+<button type="submit" value="submit">
+Submit
+</button>
+</form>
+</body>
+</html>
