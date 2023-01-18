@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<div class="container">
+  <div class="row page-header">
+    <div class="col-xs-12">
+      <h1>Morse Code Converter</h1>
+      
+      <p class="lead">Live-convert text to morse code.</p>
+    </div>
+  </div>
+  
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label for="morse" class="control-label col-xs-1">English</label>
+      
+      <div class="col-xs-11">
+        <input type="text" class="form-control" id="morse" autocomplete="off">
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label class="control-label col-xs-1">Morse</label>
+      
+      <div class="col-xs-11">
+        <pre id="text"></pre>
+      </div>
+    </div>
+  </form>
+    
+    <script>
+      $('#morse').on('keyup', function () {
+  var value  = $(this).val();
+  var output = '';
+
+  if (value === '') {
+    $('#text').text('');
+    
+    return false;
+  } // if (value === '')
+
+  for (var i = 0; i < value.length; i++) {
+    output += converter[value.charAt(i).toLowerCase()];
+  } // for (var i = 0; i < value.length; i++)
+  
+  $('#text').text(output);
+});
+
+var converter = {
+  'a': '.-',
+  'b': '-...',
+  'c': '-.-.',
+  'd': '-..',
+  'e': '.',
+  'f': '..-.',
+  'g': '--.',
+  'h': '....',
+  'i': '..',
+  'j': '.---',
+  'k': '-.-',
+  'l': '.-..',
+  'm': '--',
+  'n': '-.',
+  'o': '---',
+  'p': '.--.',
+  'q': '--.-',
+  'r': '.-.',
+  's': '...',
+  't': '-',
+  'u': '..-',
+  'v': '...-',
+  'w': '.--',
+  'x': '-..-',
+  'y': '-.--',
+  'z': '--..',
+  '1': '.----',
+  '2': '..---',
+  '3': '...--',
+  '4': '....-',
+  '5': '.....',
+  '6': '-....',
+  '7': '--...',
+  '8': '---..',
+  '9': '----.',
+  '0': '-----',
+  '.': '.-.-.-',
+  ',': '--..--',
+  '?': '..--..',
+  "'": '.----.',
+  '!': '-.-.--',
+  '/': '-..-.',
+  '(': '-.--.',
+  ')': '-.--.-',
+  '&': '.-...',
+  ':': '---...',
+  ';': '-.-.-.',
+  '=': '-...-',
+  '+': '.-.-.',
+  '-': '-....-',
+  '_': '..--.-',
+  '"': '.-..-.',
+  '$': '...-..-',
+  '@': '.--.-.',
+  ' ': ' '
+}
+    </script>
+</div>
+</html>
