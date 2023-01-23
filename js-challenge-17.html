@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Game</title>
+  <style>
+    /* CSS styles for the quiz layout */
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+    #quiz {
+      width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    #quiz h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    #quiz form {
+      margin-bottom: 20px;
+    }
+    #quiz form label {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    #quiz form input[type="radio"] {
+      margin-right: 10px;
+    }
+    #quiz form button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    #quiz form button:hover {
+      background-color: #45a049;
+    }
+    #quiz .result {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="quiz">
+    <h1>Quiz Game</h1>
+    <form id="quiz-form">
+      <label>What is the capital of France?</label>
+      <br>
+      <input type="radio" name="question1" value="Paris">Paris
+      <br>
+      <input type="radio" name="question1" value="London">London
+      <br>
+      <input type="radio" name="question1" value="Rome">Rome
+      <br>
+      <input type="radio" name="question1" value="Madrid">Madrid
+      <br>
+      <label>What is the largest planet in our solar system?</label>
+      <br>
+      <input type="radio" name="question2" value="Jupiter">Jupiter
+      <br>
+      <input type="radio" name="question2" value="Saturn">Saturn
+      <br>
+      <input type="radio" name="question2" value="Uranus">Uranus
+      <br>
+      <input type="radio" name="question2" value="Neptune">Neptune
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="result"></div>
+  </div>
+  <script>
+    // JavaScript code for the quiz game
+    const form = document.getElementById("quiz-form");
+    const resultDiv = document.querySelector(".result");
+    form.addEventListener("submit", function(e) {
+  e.preventDefault(); // prevent page refresh
+  let score = 0;
+    // get the selected answers
+const question1 = document.querySelector('input[name="question1"]:checked').value;
+const question2 = document.querySelector('input[name="question2"]:checked').value;
+      // check if the answers are correct
+  if (question1 === "Paris") {
+    score++;
+  }
+  if (question2 === "Jupiter") {
+    score++;
+  }
+  
+  // display the result
+  resultDiv.innerHTML = `You scored ${score} out of 2`;
+});
+   </script>
+</body>
+</html>
